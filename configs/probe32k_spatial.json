@@ -1,0 +1,10 @@
+{
+  "model": {
+    "architecture": "spatial", "dim": 128, "layers": 4, "heads": 4,
+    "max_seq_len": 32768, "local_window": 8, "ff_dim": 628, "dropout": 0.0
+  },
+  "training": {
+    "steps": 3, "batch_size": 1, "seq_len": 32768, "grad_accum": 1,
+    "lr": 0.0003, "eval_every": 3, "eval_batches": 1, "seed": 42, "amp": false
+  }
+}

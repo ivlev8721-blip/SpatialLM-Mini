@@ -1,0 +1,84 @@
+[
+  {
+    "architecture": "transformer",
+    "seed": 42,
+    "comparison": "equal_steps",
+    "model_config": {
+      "architecture": "transformer",
+      "vocab_size": 50257,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "max_seq_len": 16384,
+      "local_window": 8,
+      "dropout": 0.0,
+      "hybrid_every": 2,
+      "ff_dim": 512
+    },
+    "parameters": 9323392,
+    "steps": 100,
+    "training_seconds": 127.0922192002181,
+    "training_tokens": 1638400,
+    "training_tokens_per_second": 12891.426480002707,
+    "peak_allocated_mib": 499.1376953125,
+    "peak_reserved_mib": 604.0,
+    "initial_validation": {
+      "loss": 10.820247650146484,
+      "token_perplexity": 50023.47379527672,
+      "targets": 16384
+    },
+    "train_loss_last_batch": 5.705498695373535,
+    "grad_norm": 0.5076532959938049,
+    "validation": {
+      "loss": 5.58186149597168,
+      "token_perplexity": 265.5654950564307,
+      "targets": 16384
+    },
+    "test": {
+      "loss": 5.6913275718688965,
+      "token_perplexity": 296.2867015512798,
+      "targets": 16384
+    }
+  },
+  {
+    "architecture": "transformer",
+    "seed": 42,
+    "comparison": "equal_time",
+    "model_config": {
+      "architecture": "transformer",
+      "vocab_size": 50257,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "max_seq_len": 16384,
+      "local_window": 8,
+      "dropout": 0.0,
+      "hybrid_every": 2,
+      "ff_dim": 512
+    },
+    "parameters": 9323392,
+    "steps": 143,
+    "training_seconds": 180.74671519943513,
+    "training_tokens": 2342912,
+    "training_tokens_per_second": 12962.404309338852,
+    "peak_allocated_mib": 499.1376953125,
+    "peak_reserved_mib": 604.0,
+    "initial_validation": {
+      "loss": 10.820247650146484,
+      "token_perplexity": 50023.47379527672,
+      "targets": 16384
+    },
+    "train_loss_last_batch": 5.105418682098389,
+    "grad_norm": 0.6334651708602905,
+    "validation": {
+      "loss": 5.103545188903809,
+      "token_perplexity": 164.60442790833068,
+      "targets": 16384
+    },
+    "test": {
+      "loss": 5.222196578979492,
+      "token_perplexity": 185.3408530887976,
+      "targets": 16384
+    }
+  }
+]

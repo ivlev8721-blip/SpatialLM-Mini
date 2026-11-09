@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spatiallm-mini"
+version = "0.2.0"
+description = "Experimental causal language model with sparse geometric attention"
+readme = "README.md"
+authors = [{name = "Vladimir Ivlev (Ivlev8721)"}]
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = ["torch>=2.5,<3", "numpy>=2.1,<3"]
+
+[project.optional-dependencies]
+subword = ["tiktoken==0.12.0"]
+
+[project.urls]
+Homepage = "https://github.com/ivlev8721-blip/SpatialLM-Mini"
+Repository = "https://github.com/ivlev8721-blip/SpatialLM-Mini"
+Issues = "https://github.com/ivlev8721-blip/SpatialLM-Mini/issues"
+
+[tool.setuptools.packages.find]
+include = ["spatiallm*"]

@@ -1,0 +1,11 @@
+{
+  "model": {
+    "architecture": "hybrid", "dim": 128, "layers": 4, "heads": 4,
+    "max_seq_len": 128, "local_window": 8, "hybrid_every": 2,
+    "ff_dim": 570, "dropout": 0.0
+  },
+  "training": {
+    "steps": 1000, "batch_size": 8, "seq_len": 128, "lr": 0.0006,
+    "eval_every": 100, "eval_batches": 8, "seed": 42, "amp": false
+  }
+}

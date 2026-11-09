@@ -1,0 +1,84 @@
+{
+  "arguments": {
+    "data": "data/natural",
+    "out": "runs\\context256_v1",
+    "device": "cuda",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "steps": 500,
+    "seconds": 45.0,
+    "batch_size": 4,
+    "dim": 128,
+    "layers": 4,
+    "heads": 4,
+    "seq_len": 256,
+    "eval_targets": 70144,
+    "local_window": 8,
+    "lr": 0.0006,
+    "weight_decay": 0.01,
+    "threads": 4
+  },
+  "environment": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cu128",
+    "device": "cuda",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "threads": 4
+  },
+  "data_sha256": {
+    "train": "8efb94457bf2522ba49f98a28c970ee75be768493c8706671f1b297aa1a5373e",
+    "validation": "d04592666ad0eaa7ccaba11b5981d0fcbe041c90de762cb2ceef745854f88c0f",
+    "test": "96bc7c7ba6da8814ff7624d5362bed71fdc412beba6fd0816967860500938d6f"
+  },
+  "evaluation_prefix_sha256": {
+    "validation": "2748622238b44010f3e603fdf5a84e15040a3f31f6adde9ef3a1680fa1c980e5",
+    "test": "d8da02100509f5a0142458ac1a9323dd29239e1318b7f817c9e6f4855fa83795"
+  },
+  "configs": {
+    "spatial": {
+      "architecture": "spatial",
+      "vocab_size": 257,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "max_seq_len": 256,
+      "local_window": 8,
+      "dropout": 0.0,
+      "hybrid_every": 2,
+      "ff_dim": 628
+    },
+    "transformer": {
+      "architecture": "transformer",
+      "vocab_size": 257,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "max_seq_len": 256,
+      "local_window": 8,
+      "dropout": 0.0,
+      "hybrid_every": 2,
+      "ff_dim": 512
+    },
+    "hybrid": {
+      "architecture": "hybrid",
+      "vocab_size": 257,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "max_seq_len": 256,
+      "local_window": 8,
+      "dropout": 0.0,
+      "hybrid_every": 2,
+      "ff_dim": 570
+    }
+  },
+  "precision": "FP32, deterministic algorithms, TF32 disabled",
+  "evaluation": "all complete nonoverlapping context blocks; same positions for all runs",
+  "time_budget": "sum of synchronized training step wall times, including sampling and optimizer; excludes warmup, evaluation, serialization, generation",
+  "architecture_order": "rotated by seed to reduce fixed ordering effects",
+  "caveats": "Parameter matching changes FFN width; same width/depth/heads/context. One book, three seeds, short budget. Test scores are reported only; no tuning on test."
+}

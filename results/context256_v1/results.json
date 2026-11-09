@@ -1,0 +1,974 @@
+{
+  "protocol": {
+    "arguments": {
+      "data": "data/natural",
+      "out": "runs\\context256_v1",
+      "device": "cuda",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "steps": 500,
+      "seconds": 45.0,
+      "batch_size": 4,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "seq_len": 256,
+      "eval_targets": 70144,
+      "local_window": 8,
+      "lr": 0.0006,
+      "weight_decay": 0.01,
+      "threads": 4
+    },
+    "environment": {
+      "python": "3.13.14",
+      "torch": "2.10.0+cu128",
+      "device": "cuda",
+      "cuda": "12.8",
+      "gpu": "NVIDIA GeForce RTX 3050",
+      "threads": 4
+    },
+    "data_sha256": {
+      "train": "8efb94457bf2522ba49f98a28c970ee75be768493c8706671f1b297aa1a5373e",
+      "validation": "d04592666ad0eaa7ccaba11b5981d0fcbe041c90de762cb2ceef745854f88c0f",
+      "test": "96bc7c7ba6da8814ff7624d5362bed71fdc412beba6fd0816967860500938d6f"
+    },
+    "evaluation_prefix_sha256": {
+      "validation": "2748622238b44010f3e603fdf5a84e15040a3f31f6adde9ef3a1680fa1c980e5",
+      "test": "d8da02100509f5a0142458ac1a9323dd29239e1318b7f817c9e6f4855fa83795"
+    },
+    "configs": {
+      "spatial": {
+        "architecture": "spatial",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 628
+      },
+      "transformer": {
+        "architecture": "transformer",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 512
+      },
+      "hybrid": {
+        "architecture": "hybrid",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 570
+      }
+    },
+    "precision": "FP32, deterministic algorithms, TF32 disabled",
+    "evaluation": "all complete nonoverlapping context blocks; same positions for all runs",
+    "time_budget": "sum of synchronized training step wall times, including sampling and optimizer; excludes warmup, evaluation, serialization, generation",
+    "architecture_order": "rotated by seed to reduce fixed ordering effects",
+    "caveats": "Parameter matching changes FFN width; same width/depth/heads/context. One book, three seeds, short budget. Test scores are reported only; no tuning on test."
+  },
+  "records": [
+    {
+      "architecture": "spatial",
+      "seed": 42,
+      "comparison": "equal_steps",
+      "model_config": {
+        "architecture": "spatial",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 628
+      },
+      "parameters": 858768,
+      "steps": 500,
+      "training_seconds": 17.054648496443406,
+      "training_tokens": 512000,
+      "training_tokens_per_second": 30021.140576821213,
+      "train_loss_last_batch": 2.1139819622039795,
+      "peak_allocated_mib": 144.20703125,
+      "peak_reserved_mib": 156.0,
+      "validation": {
+        "loss": 2.049024541882703,
+        "bits_per_byte": 2.9561175452339556,
+        "byte_perplexity": 7.76032753856786,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 2.0372256449539297,
+        "bits_per_byte": 2.9390953351468543,
+        "byte_perplexity": 7.66930228857448,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "spatial",
+      "seed": 42,
+      "comparison": "equal_time",
+      "model_config": {
+        "architecture": "spatial",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 628
+      },
+      "parameters": 858768,
+      "steps": 1339,
+      "training_seconds": 45.03429869771935,
+      "training_tokens": 1371136,
+      "training_tokens_per_second": 30446.48278423036,
+      "train_loss_last_batch": 1.6536574363708496,
+      "peak_allocated_mib": 144.20703125,
+      "peak_reserved_mib": 156.0,
+      "validation": {
+        "loss": 1.5865577450633919,
+        "bits_per_byte": 2.288918990886932,
+        "byte_perplexity": 4.886897993615858,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 1.5872830953041133,
+        "bits_per_byte": 2.289965450082128,
+        "byte_perplexity": 4.890443992141878,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "transformer",
+      "seed": 42,
+      "comparison": "equal_steps",
+      "model_config": {
+        "architecture": "transformer",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 512
+      },
+      "parameters": 859008,
+      "steps": 500,
+      "training_seconds": 10.39243830088526,
+      "training_tokens": 512000,
+      "training_tokens_per_second": 49266.59030117949,
+      "train_loss_last_batch": 2.4220199584960938,
+      "peak_allocated_mib": 110.986328125,
+      "peak_reserved_mib": 130.0,
+      "validation": {
+        "loss": 2.4146639552429643,
+        "bits_per_byte": 3.4836237136423547,
+        "byte_perplexity": 11.186010725629295,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 2.413596701447981,
+        "bits_per_byte": 3.4820839918849624,
+        "byte_perplexity": 11.174078781570504,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "transformer",
+      "seed": 42,
+      "comparison": "equal_time",
+      "model_config": {
+        "architecture": "transformer",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 512
+      },
+      "parameters": 859008,
+      "steps": 2166,
+      "training_seconds": 45.00285089830868,
+      "training_tokens": 2217984,
+      "training_tokens_per_second": 49285.41094011796,
+      "train_loss_last_batch": 1.6200990676879883,
+      "peak_allocated_mib": 110.986328125,
+      "peak_reserved_mib": 130.0,
+      "validation": {
+        "loss": 1.6845842817403975,
+        "bits_per_byte": 2.430341389226368,
+        "byte_perplexity": 5.390209657934547,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 1.6782614767116353,
+        "bits_per_byte": 2.421219509766865,
+        "byte_perplexity": 5.356235931012001,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "hybrid",
+      "seed": 42,
+      "comparison": "equal_steps",
+      "model_config": {
+        "architecture": "hybrid",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 570
+      },
+      "parameters": 858888,
+      "steps": 500,
+      "training_seconds": 13.765432501444593,
+      "training_tokens": 512000,
+      "training_tokens_per_second": 37194.61774602933,
+      "train_loss_last_batch": 2.137829303741455,
+      "peak_allocated_mib": 126.04150390625,
+      "peak_reserved_mib": 132.0,
+      "validation": {
+        "loss": 2.0811427283461077,
+        "bits_per_byte": 3.0024542935670566,
+        "byte_perplexity": 8.013621076041655,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 2.0718187433089654,
+        "bits_per_byte": 2.9890026265926486,
+        "byte_perplexity": 7.939249451792325,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "hybrid",
+      "seed": 42,
+      "comparison": "equal_time",
+      "model_config": {
+        "architecture": "hybrid",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 570
+      },
+      "parameters": 858888,
+      "steps": 1635,
+      "training_seconds": 45.031182505656034,
+      "training_tokens": 1674240,
+      "training_tokens_per_second": 37179.569952215024,
+      "train_loss_last_batch": 1.5476021766662598,
+      "peak_allocated_mib": 126.04150390625,
+      "peak_reserved_mib": 132.0,
+      "validation": {
+        "loss": 1.5006512690634624,
+        "bits_per_byte": 2.164982143981587,
+        "byte_perplexity": 4.484608806445332,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 1.5045585336476346,
+        "bits_per_byte": 2.1706191352206132,
+        "byte_perplexity": 4.502165636863217,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "transformer",
+      "seed": 43,
+      "comparison": "equal_steps",
+      "model_config": {
+        "architecture": "transformer",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 512
+      },
+      "parameters": 859008,
+      "steps": 500,
+      "training_seconds": 10.238614899339154,
+      "training_tokens": 512000,
+      "training_tokens_per_second": 50006.764101758214,
+      "train_loss_last_batch": 2.3671483993530273,
+      "peak_allocated_mib": 110.986328125,
+      "peak_reserved_mib": 130.0,
+      "validation": {
+        "loss": 2.4185058722530837,
+        "bits_per_byte": 3.489166428260361,
+        "byte_perplexity": 11.229069110919934,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 2.416186694681209,
+        "bits_per_byte": 3.4858205622784766,
+        "byte_perplexity": 11.203057080602507,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "transformer",
+      "seed": 43,
+      "comparison": "equal_time",
+      "model_config": {
+        "architecture": "transformer",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 512
+      },
+      "parameters": 859008,
+      "steps": 2186,
+      "training_seconds": 45.01853930065408,
+      "training_tokens": 2238464,
+      "training_tokens_per_second": 49723.15927557154,
+      "train_loss_last_batch": 1.7433199882507324,
+      "peak_allocated_mib": 110.986328125,
+      "peak_reserved_mib": 130.0,
+      "validation": {
+        "loss": 1.7019651562628084,
+        "bits_per_byte": 2.4554166907061634,
+        "byte_perplexity": 5.484715130405614,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 1.6975687716129053,
+        "bits_per_byte": 2.449074048373908,
+        "byte_perplexity": 5.460655140235946,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "hybrid",
+      "seed": 43,
+      "comparison": "equal_steps",
+      "model_config": {
+        "architecture": "hybrid",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 570
+      },
+      "parameters": 858888,
+      "steps": 500,
+      "training_seconds": 13.857416100567207,
+      "training_tokens": 512000,
+      "training_tokens_per_second": 36947.72505092367,
+      "train_loss_last_batch": 2.054938793182373,
+      "peak_allocated_mib": 126.04150390625,
+      "peak_reserved_mib": 132.0,
+      "validation": {
+        "loss": 2.093801623713361,
+        "bits_per_byte": 3.0207172191365252,
+        "byte_perplexity": 8.115709466601642,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 2.0800425240593237,
+        "bits_per_byte": 3.000867034298549,
+        "byte_perplexity": 8.004809304044644,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "hybrid",
+      "seed": 43,
+      "comparison": "equal_time",
+      "model_config": {
+        "architecture": "hybrid",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 570
+      },
+      "parameters": 858888,
+      "steps": 1611,
+      "training_seconds": 45.00503439921886,
+      "training_tokens": 1649664,
+      "training_tokens_per_second": 36655.09919105034,
+      "train_loss_last_batch": 1.5671024322509766,
+      "peak_allocated_mib": 126.04150390625,
+      "peak_reserved_mib": 132.0,
+      "validation": {
+        "loss": 1.511523636588215,
+        "bits_per_byte": 2.1806676546922694,
+        "byte_perplexity": 4.533633143978417,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 1.511283556910327,
+        "bits_per_byte": 2.1803212929315623,
+        "byte_perplexity": 4.532544841438436,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "spatial",
+      "seed": 43,
+      "comparison": "equal_steps",
+      "model_config": {
+        "architecture": "spatial",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 628
+      },
+      "parameters": 858768,
+      "steps": 500,
+      "training_seconds": 17.27097130101174,
+      "training_tokens": 512000,
+      "training_tokens_per_second": 29645.119031030223,
+      "train_loss_last_batch": 2.0549068450927734,
+      "peak_allocated_mib": 144.20703125,
+      "peak_reserved_mib": 156.0,
+      "validation": {
+        "loss": 2.0625833977748007,
+        "bits_per_byte": 2.975678839389613,
+        "byte_perplexity": 7.86626527560995,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 2.053649784874742,
+        "bits_per_byte": 2.962790360361477,
+        "byte_perplexity": 7.796304075106536,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "spatial",
+      "seed": 43,
+      "comparison": "equal_time",
+      "model_config": {
+        "architecture": "spatial",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 628
+      },
+      "parameters": 858768,
+      "steps": 1312,
+      "training_seconds": 45.02781639806926,
+      "training_tokens": 1343488,
+      "training_tokens_per_second": 29836.845476202285,
+      "train_loss_last_batch": 1.633675456047058,
+      "peak_allocated_mib": 144.20703125,
+      "peak_reserved_mib": 156.0,
+      "validation": {
+        "loss": 1.6019760718310836,
+        "bits_per_byte": 2.311162934453486,
+        "byte_perplexity": 4.9628296490691906,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 1.5959309809399347,
+        "bits_per_byte": 2.3024417118031026,
+        "byte_perplexity": 4.9329193889681955,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "hybrid",
+      "seed": 44,
+      "comparison": "equal_steps",
+      "model_config": {
+        "architecture": "hybrid",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 570
+      },
+      "parameters": 858888,
+      "steps": 500,
+      "training_seconds": 13.756465194979683,
+      "training_tokens": 512000,
+      "training_tokens_per_second": 37218.86347568782,
+      "train_loss_last_batch": 1.9151164293289185,
+      "peak_allocated_mib": 126.04150390625,
+      "peak_reserved_mib": 132.0,
+      "validation": {
+        "loss": 2.0949939967942064,
+        "bits_per_byte": 3.0224374498671507,
+        "byte_perplexity": 8.125392191664734,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 2.0814105907495875,
+        "bits_per_byte": 3.0028407373281976,
+        "byte_perplexity": 8.015767911359058,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "hybrid",
+      "seed": 44,
+      "comparison": "equal_time",
+      "model_config": {
+        "architecture": "hybrid",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 570
+      },
+      "parameters": 858888,
+      "steps": 1636,
+      "training_seconds": 45.00476789637469,
+      "training_tokens": 1675264,
+      "training_tokens_per_second": 37224.14486965834,
+      "train_loss_last_batch": 1.5100398063659668,
+      "peak_allocated_mib": 126.04150390625,
+      "peak_reserved_mib": 132.0,
+      "validation": {
+        "loss": 1.4947641835595569,
+        "bits_per_byte": 2.156488874919813,
+        "byte_perplexity": 4.45828509195595,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 1.491763979849154,
+        "bits_per_byte": 2.152160495905158,
+        "byte_perplexity": 4.444929373437305,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "spatial",
+      "seed": 44,
+      "comparison": "equal_steps",
+      "model_config": {
+        "architecture": "spatial",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 628
+      },
+      "parameters": 858768,
+      "steps": 500,
+      "training_seconds": 17.171625597402453,
+      "training_tokens": 512000,
+      "training_tokens_per_second": 29816.629596061663,
+      "train_loss_last_batch": 1.910161018371582,
+      "peak_allocated_mib": 144.20703125,
+      "peak_reserved_mib": 156.0,
+      "validation": {
+        "loss": 2.0664461111500314,
+        "bits_per_byte": 2.981251556820434,
+        "byte_perplexity": 7.896709163857025,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 2.04773298493267,
+        "bits_per_byte": 2.9542542224271173,
+        "byte_perplexity": 7.750311103391509,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "spatial",
+      "seed": 44,
+      "comparison": "equal_time",
+      "model_config": {
+        "architecture": "spatial",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 628
+      },
+      "parameters": 858768,
+      "steps": 1318,
+      "training_seconds": 45.03327159699984,
+      "training_tokens": 1349632,
+      "training_tokens_per_second": 29969.663587353352,
+      "train_loss_last_batch": 1.5912086963653564,
+      "peak_allocated_mib": 144.20703125,
+      "peak_reserved_mib": 156.0,
+      "validation": {
+        "loss": 1.5948081260179952,
+        "bits_per_byte": 2.300821774575583,
+        "byte_perplexity": 4.927383544709382,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 1.5911733451550893,
+        "bits_per_byte": 2.2955778942499503,
+        "byte_perplexity": 4.909506095284918,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "transformer",
+      "seed": 44,
+      "comparison": "equal_steps",
+      "model_config": {
+        "architecture": "transformer",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 512
+      },
+      "parameters": 859008,
+      "steps": 500,
+      "training_seconds": 10.262119102291763,
+      "training_tokens": 512000,
+      "training_tokens_per_second": 49892.22936280859,
+      "train_loss_last_batch": 2.3424978256225586,
+      "peak_allocated_mib": 110.986328125,
+      "peak_reserved_mib": 130.0,
+      "validation": {
+        "loss": 2.4241501397460046,
+        "bits_per_byte": 3.4973093849818486,
+        "byte_perplexity": 11.292628184146546,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 2.4217731970070053,
+        "bits_per_byte": 3.4938801814798173,
+        "byte_perplexity": 11.265818129185503,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    },
+    {
+      "architecture": "transformer",
+      "seed": 44,
+      "comparison": "equal_time",
+      "model_config": {
+        "architecture": "transformer",
+        "vocab_size": 257,
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "max_seq_len": 256,
+        "local_window": 8,
+        "dropout": 0.0,
+        "hybrid_every": 2,
+        "ff_dim": 512
+      },
+      "parameters": 859008,
+      "steps": 2175,
+      "training_seconds": 45.00140770152211,
+      "training_tokens": 2227200,
+      "training_tokens_per_second": 49491.78511863903,
+      "train_loss_last_batch": 1.6670329570770264,
+      "peak_allocated_mib": 110.986328125,
+      "peak_reserved_mib": 130.0,
+      "validation": {
+        "loss": 1.7097454932484313,
+        "bits_per_byte": 2.4666413442917667,
+        "byte_perplexity": 5.527554498649204,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      },
+      "test": {
+        "loss": 1.7039037707948337,
+        "bits_per_byte": 2.458213520277712,
+        "byte_perplexity": 5.495358191925048,
+        "targets": 70144,
+        "unused_tail_bytes": 0
+      }
+    }
+  ],
+  "summary": [
+    {
+      "comparison": "equal_steps",
+      "architecture": "spatial",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "parameters": 858768,
+      "test_loss_mean": 2.0462028049204473,
+      "test_loss_sd": 0.00831830398500566,
+      "validation_loss_mean": 2.0593513502691785,
+      "validation_loss_sd": 0.009149446280679025,
+      "steps_mean": 500,
+      "steps_sd": 0.0,
+      "training_seconds_mean": 17.165748464952532,
+      "training_seconds_sd": 0.10828109003169938,
+      "tokens_per_second_mean": 29827.6297346377,
+      "tokens_per_second_sd": 188.25196681915585,
+      "peak_allocated_mib_mean": 144.20703125,
+      "peak_allocated_mib_sd": 0.0
+    },
+    {
+      "comparison": "equal_steps",
+      "architecture": "transformer",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "parameters": 859008,
+      "test_loss_mean": 2.4171855310453987,
+      "test_loss_sd": 0.004178758843066441,
+      "validation_loss_mean": 2.419106655747351,
+      "validation_loss_sd": 0.00477154374512781,
+      "steps_mean": 500,
+      "steps_sd": 0.0,
+      "training_seconds_mean": 10.297724100838726,
+      "training_seconds_sd": 0.08286251659798022,
+      "tokens_per_second_mean": 49721.86125524876,
+      "tokens_per_second_sd": 398.4134571283035,
+      "peak_allocated_mib_mean": 110.986328125,
+      "peak_allocated_mib_sd": 0.0
+    },
+    {
+      "comparison": "equal_steps",
+      "architecture": "hybrid",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "parameters": 858888,
+      "test_loss_mean": 2.0777572860392923,
+      "test_loss_sd": 0.005188219245289262,
+      "validation_loss_mean": 2.089979449617892,
+      "validation_loss_sd": 0.0076760126704807485,
+      "steps_mean": 500,
+      "steps_sd": 0.0,
+      "training_seconds_mean": 13.79310459899716,
+      "training_seconds_sd": 0.05587557670355111,
+      "tokens_per_second_mean": 37120.40209088027,
+      "tokens_per_second_sd": 150.03327613499258,
+      "peak_allocated_mib_mean": 126.04150390625,
+      "peak_allocated_mib_sd": 0.0
+    },
+    {
+      "comparison": "equal_time",
+      "architecture": "spatial",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "parameters": 858768,
+      "test_loss_mean": 1.5914624737997125,
+      "test_loss_sd": 0.004331186676006679,
+      "validation_loss_mean": 1.5944473143041569,
+      "validation_loss_sd": 0.007715493431949896,
+      "steps_mean": 1323,
+      "steps_sd": 14.177446878757825,
+      "training_seconds_mean": 45.031795564262815,
+      "training_seconds_sd": 0.003484114904671243,
+      "tokens_per_second_mean": 30084.330615928666,
+      "tokens_per_second_sd": 320.5866613205366,
+      "peak_allocated_mib_mean": 144.20703125,
+      "peak_allocated_mib_sd": 0.0
+    },
+    {
+      "comparison": "equal_time",
+      "architecture": "transformer",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "parameters": 859008,
+      "test_loss_mean": 1.6932446730397914,
+      "test_loss_sd": 0.013356840300565553,
+      "validation_loss_mean": 1.698764977083879,
+      "validation_loss_sd": 0.012882255284729536,
+      "steps_mean": 2175.6666666666665,
+      "steps_sd": 10.016652800877813,
+      "training_seconds_mean": 45.00759930016162,
+      "training_seconds_sd": 0.009501758380554339,
+      "tokens_per_second_mean": 49500.11844477618,
+      "tokens_per_second_sd": 218.99311528328,
+      "peak_allocated_mib_mean": 110.986328125,
+      "peak_allocated_mib_sd": 0.0
+    },
+    {
+      "comparison": "equal_time",
+      "architecture": "hybrid",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "parameters": 858888,
+      "test_loss_mean": 1.5025353568023718,
+      "test_loss_sd": 0.009915815930732702,
+      "validation_loss_mean": 1.5023130297370781,
+      "validation_loss_sd": 0.008502405709987686,
+      "steps_mean": 1627.3333333333333,
+      "steps_sd": 14.153915830374764,
+      "training_seconds_mean": 45.013661600416526,
+      "training_seconds_sd": 0.015174134118635572,
+      "tokens_per_second_mean": 37019.60467097457,
+      "tokens_per_second_sd": 316.4568129893273,
+      "peak_allocated_mib_mean": 126.04150390625,
+      "peak_allocated_mib_sd": 0.0
+    }
+  ],
+  "paired_deltas": [
+    {
+      "comparison": "equal_steps",
+      "architecture": "spatial",
+      "test_loss_delta_vs_transformer": [
+        -0.37637105649405145,
+        -0.362536909806467,
+        -0.37404021207433535
+      ],
+      "mean_delta": -0.37098272612495126,
+      "sd_delta": 0.007406555804921177,
+      "note": "Negative favours candidate; three seeds are exploratory, not a significance test."
+    },
+    {
+      "comparison": "equal_steps",
+      "architecture": "hybrid",
+      "test_loss_delta_vs_transformer": [
+        -0.3417779581390157,
+        -0.3361441706218855,
+        -0.3403626062574179
+      ],
+      "mean_delta": -0.33942824500610635,
+      "sd_delta": 0.002930812798185388,
+      "note": "Negative favours candidate; three seeds are exploratory, not a significance test."
+    },
+    {
+      "comparison": "equal_time",
+      "architecture": "spatial",
+      "test_loss_delta_vs_transformer": [
+        -0.09097838140752201,
+        -0.10163779067297063,
+        -0.11273042563974434
+      ],
+      "mean_delta": -0.10178219924007899,
+      "sd_delta": 0.010876741122497575,
+      "note": "Negative favours candidate; three seeds are exploratory, not a significance test."
+    },
+    {
+      "comparison": "equal_time",
+      "architecture": "hybrid",
+      "test_loss_delta_vs_transformer": [
+        -0.1737029430640007,
+        -0.18628521470257842,
+        -0.2121397909456797
+      ],
+      "mean_delta": -0.1907093162374196,
+      "sd_delta": 0.019596615130240504,
+      "note": "Negative favours candidate; three seeds are exploratory, not a significance test."
+    }
+  ]
+}

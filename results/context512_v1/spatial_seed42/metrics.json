@@ -1,0 +1,80 @@
+[
+  {
+    "architecture": "spatial",
+    "seed": 42,
+    "comparison": "equal_steps",
+    "model_config": {
+      "architecture": "spatial",
+      "vocab_size": 257,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "max_seq_len": 512,
+      "local_window": 8,
+      "dropout": 0.0,
+      "hybrid_every": 2,
+      "ff_dim": 628
+    },
+    "parameters": 891552,
+    "steps": 500,
+    "training_seconds": 16.936618900625035,
+    "training_tokens": 512000,
+    "training_tokens_per_second": 30230.354889847877,
+    "train_loss_last_batch": 2.1091578006744385,
+    "peak_allocated_mib": 147.556640625,
+    "peak_reserved_mib": 176.0,
+    "validation": {
+      "loss": 2.093284432905434,
+      "bits_per_byte": 3.0199710705227356,
+      "byte_perplexity": 8.111513181499287,
+      "targets": 70144,
+      "unused_tail_bytes": 0
+    },
+    "test": {
+      "loss": 2.0756714761692243,
+      "bits_per_byte": 2.994560945184014,
+      "byte_perplexity": 7.969896258110978,
+      "targets": 70144,
+      "unused_tail_bytes": 0
+    }
+  },
+  {
+    "architecture": "spatial",
+    "seed": 42,
+    "comparison": "equal_time",
+    "model_config": {
+      "architecture": "spatial",
+      "vocab_size": 257,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "max_seq_len": 512,
+      "local_window": 8,
+      "dropout": 0.0,
+      "hybrid_every": 2,
+      "ff_dim": 628
+    },
+    "parameters": 891552,
+    "steps": 1342,
+    "training_seconds": 45.02325809886679,
+    "training_tokens": 1374208,
+    "training_tokens_per_second": 30522.180269192646,
+    "train_loss_last_batch": 1.582059383392334,
+    "peak_allocated_mib": 147.556640625,
+    "peak_reserved_mib": 176.0,
+    "validation": {
+      "loss": 1.5982263018615055,
+      "bits_per_byte": 2.3057531599139014,
+      "byte_perplexity": 4.944255026532332,
+      "targets": 70144,
+      "unused_tail_bytes": 0
+    },
+    "test": {
+      "loss": 1.5942543649325405,
+      "bits_per_byte": 2.30002286620376,
+      "byte_perplexity": 4.9246557068041605,
+      "targets": 70144,
+      "unused_tail_bytes": 0
+    }
+  }
+]

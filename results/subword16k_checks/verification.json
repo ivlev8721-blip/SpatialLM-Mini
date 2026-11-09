@@ -1,0 +1,156 @@
+{
+  "snapshots": [
+    {
+      "path": "runs\\subword16k_v1\\spatial_seed42\\equal_steps.pt",
+      "bytes": 37318015,
+      "sha256": "8382d05a84c45754da7c4bfb327a71ebea733dc2b2923d3d86065ceaaedf0522"
+    },
+    {
+      "path": "runs\\subword16k_v1\\spatial_seed42\\equal_time.pt",
+      "bytes": 37317941,
+      "sha256": "5bbebbcc57e27d1a5ecbf519958f2e0cd9a15f4e7843afbe15e599def519f7f4"
+    },
+    {
+      "path": "runs\\subword16k_v1\\transformer_seed42\\equal_steps.pt",
+      "bytes": 37313583,
+      "sha256": "f48d007f5b2e1b65989074688e7093fea7dc992d88d014a99366d4aa8f9ef936"
+    },
+    {
+      "path": "runs\\subword16k_v1\\transformer_seed42\\equal_time.pt",
+      "bytes": 37313525,
+      "sha256": "a3f65818b1445f710882642c18053e54c5d961c77f78cdf39fc9b5e9c34765a4"
+    },
+    {
+      "path": "runs\\subword16k_v1\\hybrid_seed42\\equal_steps.pt",
+      "bytes": 37315639,
+      "sha256": "9fd88fd71a0f85dfe5bd93824bcc0497180df069dfd5f933eba8fddc2426d7dd"
+    },
+    {
+      "path": "runs\\subword16k_v1\\hybrid_seed42\\equal_time.pt",
+      "bytes": 37315573,
+      "sha256": "5eb3f8a2f97339deba3a61ae8b9379899c016bb8938b5e20416d6a2fb7936a24"
+    },
+    {
+      "path": "runs\\subword16k_v1\\transformer_seed43\\equal_steps.pt",
+      "bytes": 37313583,
+      "sha256": "589334a73703f1ddbeee9994e94ccf833d21f9d5435095322c600843da91cc55"
+    },
+    {
+      "path": "runs\\subword16k_v1\\transformer_seed43\\equal_time.pt",
+      "bytes": 37313525,
+      "sha256": "4f9576fbefc01fd2e29c9f864df8df08e394e3a5be2a10d097d5f313eec0fce9"
+    },
+    {
+      "path": "runs\\subword16k_v1\\hybrid_seed43\\equal_steps.pt",
+      "bytes": 37315639,
+      "sha256": "4912204b7384828dfc4edb53bfdd90607afb89804dd69fba6aee9ffd85b64925"
+    },
+    {
+      "path": "runs\\subword16k_v1\\hybrid_seed43\\equal_time.pt",
+      "bytes": 37315573,
+      "sha256": "85062149ceda2127b20a2f05416575e531e1600aa28dde700e9435c5e7a15682"
+    },
+    {
+      "path": "runs\\subword16k_v1\\spatial_seed43\\equal_steps.pt",
+      "bytes": 37318015,
+      "sha256": "3831ad2a3a9ebba026b42a09863894d61ef38de929d71a30d4aa223a4d67caa4"
+    },
+    {
+      "path": "runs\\subword16k_v1\\spatial_seed43\\equal_time.pt",
+      "bytes": 37317941,
+      "sha256": "5c44f19e84ae924b87a3fdb383c770235b0a65565dff89bc7d195717f69d0288"
+    },
+    {
+      "path": "runs\\subword16k_v1\\hybrid_seed44\\equal_steps.pt",
+      "bytes": 37315639,
+      "sha256": "33550f04efa75f714cd0fe71e3fe54b65f62e322ed9e7718604d8ce32139e507"
+    },
+    {
+      "path": "runs\\subword16k_v1\\hybrid_seed44\\equal_time.pt",
+      "bytes": 37315573,
+      "sha256": "39ad530ec92af05f4c4f9dcf827ff62b7cdeed718d36d03ce46066809882c104"
+    },
+    {
+      "path": "runs\\subword16k_v1\\spatial_seed44\\equal_steps.pt",
+      "bytes": 37318015,
+      "sha256": "90d0184fadb8e00d786c2a803fb6898158d3f95dc06f1b901005a4f34df85091"
+    },
+    {
+      "path": "runs\\subword16k_v1\\spatial_seed44\\equal_time.pt",
+      "bytes": 37317941,
+      "sha256": "b6e36875ecf363805f7f5ea4e1d750fdae990f69384007a4e35ee3dd77bc817e"
+    },
+    {
+      "path": "runs\\subword16k_v1\\transformer_seed44\\equal_steps.pt",
+      "bytes": 37313583,
+      "sha256": "f3359f664e1c200dce231bc062de5661a81df3af7d97cdca4b4689059e60d823"
+    },
+    {
+      "path": "runs\\subword16k_v1\\transformer_seed44\\equal_time.pt",
+      "bytes": 37313525,
+      "sha256": "d496b7f469a1e126979796b18fd0d401342d3689e445a114c82bfaa7256f9248"
+    }
+  ],
+  "long_prompt_generation": [
+    {
+      "architecture": "spatial",
+      "prompt_tokens": 18225,
+      "active_context": 16384,
+      "appended_text": "  ",
+      "passed": true
+    },
+    {
+      "architecture": "transformer",
+      "prompt_tokens": 18225,
+      "active_context": 16384,
+      "appended_text": "\n\n",
+      "passed": true
+    },
+    {
+      "architecture": "hybrid",
+      "prompt_tokens": 18225,
+      "active_context": 16384,
+      "appended_text": "\n\n",
+      "passed": true
+    }
+  ],
+  "efficient_vs_math": {
+    "passed": true,
+    "precision": "FP16",
+    "causal": true,
+    "max_output_abs_error": 0.0009765625,
+    "max_gradient_abs_error": 6.556510925292969e-07
+  },
+  "legacy_checkpoint": "runs\\natural_v1\\hybrid_seed42\\equal_steps.pt",
+  "legacy_sample": "Elizabeth the ",
+  "dataset_manifest": {
+    "tokenizer": "gpt2",
+    "tiktoken": "0.12.0",
+    "vocab_size": 50257,
+    "splits": {
+      "train": {
+        "bytes": 562440,
+        "tokens": 141979,
+        "bytes_per_token": 3.9614309158396663,
+        "text_sha256": "8efb94457bf2522ba49f98a28c970ee75be768493c8706671f1b297aa1a5373e",
+        "token_uint32_le_sha256": "54f5ae23595cacb710ab885b99cee4695bfca5063e45d4ec9830dfb629e80796"
+      },
+      "validation": {
+        "bytes": 70373,
+        "tokens": 18537,
+        "bytes_per_token": 3.796353239467012,
+        "text_sha256": "d04592666ad0eaa7ccaba11b5981d0fcbe041c90de762cb2ceef745854f88c0f",
+        "token_uint32_le_sha256": "54d391525af6a9b1523e6ca90da0bcaecf8d746280475eefc52e6332a9eb0b83"
+      },
+      "test": {
+        "bytes": 70420,
+        "tokens": 18225,
+        "bytes_per_token": 3.863923182441701,
+        "text_sha256": "96bc7c7ba6da8814ff7624d5362bed71fdc412beba6fd0816967860500938d6f",
+        "token_uint32_le_sha256": "84e44c12bf42e5575957c28d25f3dd190789b029525126c39bfe452fc1699549"
+      }
+    },
+    "note": "Fixed pretrained tokenizer only; no pretrained model weights. Each existing text split encoded independently."
+  },
+  "passed": true
+}

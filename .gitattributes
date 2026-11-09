@@ -1,0 +1,12 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.txt text eol=lf
+*.ps1 text eol=crlf
+*.pt binary
+data/demo.txt -text
+data/pride_and_prejudice_raw.txt -text
+data/natural/*.txt -text

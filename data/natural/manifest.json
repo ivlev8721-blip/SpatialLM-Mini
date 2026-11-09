@@ -1,0 +1,21 @@
+{
+  "source": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",
+  "book": "Pride and Prejudice — Jane Austen",
+  "raw_sha256": "3f6bb9d6f78e0293b56acd4714dd68cb7d6d1d293402031ce9d5a216bcaf9d75",
+  "clean_sha256": "fefa5417b035a9b98492776a297b58ff6335643dc9b2d6f3f14f3e6226c4fc0d",
+  "split_method": "contiguous characters, 80/10/10, then UTF-8 encoding",
+  "splits": {
+    "train": {
+      "bytes": 562440,
+      "sha256": "8efb94457bf2522ba49f98a28c970ee75be768493c8706671f1b297aa1a5373e"
+    },
+    "validation": {
+      "bytes": 70373,
+      "sha256": "d04592666ad0eaa7ccaba11b5981d0fcbe041c90de762cb2ceef745854f88c0f"
+    },
+    "test": {
+      "bytes": 70420,
+      "sha256": "96bc7c7ba6da8814ff7624d5362bed71fdc412beba6fd0816967860500938d6f"
+    }
+  }
+}

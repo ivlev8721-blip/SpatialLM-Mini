@@ -1,0 +1,80 @@
+[
+  {
+    "architecture": "transformer",
+    "seed": 44,
+    "comparison": "equal_steps",
+    "model_config": {
+      "architecture": "transformer",
+      "vocab_size": 257,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "max_seq_len": 512,
+      "local_window": 8,
+      "dropout": 0.0,
+      "hybrid_every": 2,
+      "ff_dim": 512
+    },
+    "parameters": 891776,
+    "steps": 500,
+    "training_seconds": 10.11859679990448,
+    "training_tokens": 512000,
+    "training_tokens_per_second": 50599.90136229494,
+    "train_loss_last_batch": 2.4660425186157227,
+    "peak_allocated_mib": 111.36328125,
+    "peak_reserved_mib": 130.0,
+    "validation": {
+      "loss": 2.4511448292836655,
+      "bits_per_byte": 3.536254489708169,
+      "byte_perplexity": 11.601620994836736,
+      "targets": 70144,
+      "unused_tail_bytes": 0
+    },
+    "test": {
+      "loss": 2.4424756965497982,
+      "bits_per_byte": 3.5237475749042106,
+      "byte_perplexity": 11.501479698764683,
+      "targets": 70144,
+      "unused_tail_bytes": 0
+    }
+  },
+  {
+    "architecture": "transformer",
+    "seed": 44,
+    "comparison": "equal_time",
+    "model_config": {
+      "architecture": "transformer",
+      "vocab_size": 257,
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "max_seq_len": 512,
+      "local_window": 8,
+      "dropout": 0.0,
+      "hybrid_every": 2,
+      "ff_dim": 512
+    },
+    "parameters": 891776,
+    "steps": 2216,
+    "training_seconds": 45.01717249839567,
+    "training_tokens": 2269184,
+    "training_tokens_per_second": 50407.07521292835,
+    "train_loss_last_batch": 2.1981213092803955,
+    "peak_allocated_mib": 111.36328125,
+    "peak_reserved_mib": 130.0,
+    "validation": {
+      "loss": 2.155079552727024,
+      "bits_per_byte": 3.1091225834404828,
+      "byte_perplexity": 8.628576578463067,
+      "targets": 70144,
+      "unused_tail_bytes": 0
+    },
+    "test": {
+      "loss": 2.128046364679824,
+      "bits_per_byte": 3.0701219371053687,
+      "byte_perplexity": 8.398443278443423,
+      "targets": 70144,
+      "unused_tail_bytes": 0
+    }
+  }
+]

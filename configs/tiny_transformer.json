@@ -1,0 +1,4 @@
+{
+  "model": {"architecture": "transformer", "dim": 96, "layers": 2, "heads": 4, "max_seq_len": 64, "local_window": 8, "dropout": 0.0},
+  "training": {"steps": 200, "batch_size": 8, "seq_len": 64, "lr": 0.0006, "eval_every": 50, "eval_batches": 4, "seed": 42, "amp": false}
+}

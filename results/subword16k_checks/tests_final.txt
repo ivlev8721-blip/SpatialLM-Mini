@@ -1,0 +1,30 @@
+test_paired_comparison_and_all_groups (test_context_report.ContextReportTests.test_paired_comparison_and_all_groups) ... ok
+test_rejects_different_evaluation_prefix (test_context_report.ContextReportTests.test_rejects_different_evaluation_prefix) ... ok
+test_rejects_unfair_budget_or_targets (test_context_report.ContextReportTests.test_rejects_unfair_budget_or_targets) ... ok
+test_common_evaluation_prefix_preserves_training_data (test_experiment.ExperimentTests.test_common_evaluation_prefix_preserves_training_data) ... ok
+test_hybrid_schedule_causality_and_gradients (test_experiment.ExperimentTests.test_hybrid_schedule_causality_and_gradients) ... ok
+test_legacy_config_shapes_and_hybrid_validation (test_experiment.ExperimentTests.test_legacy_config_shapes_and_hybrid_validation) ... ok
+test_long_context_causality_and_backward (test_experiment.ExperimentTests.test_long_context_causality_and_backward) ... ok
+test_parameter_matching (test_experiment.ExperimentTests.test_parameter_matching) ... ok
+test_partition_loss_weighted_over_partial_batch (test_experiment.ExperimentTests.test_partition_loss_weighted_over_partial_batch) ... ok
+test_bad_configuration_and_context (test_spatiallm.ModelTests.test_bad_configuration_and_context) ... ok
+test_generation_reproducible_and_crops (test_spatiallm.ModelTests.test_generation_reproducible_and_crops) ... ok
+test_geometric_parameters_learn (test_spatiallm.ModelTests.test_geometric_parameters_learn) ... ok
+test_no_future_leakage (test_spatiallm.ModelTests.test_no_future_leakage) ... ok
+test_overfits_tiny_batch (test_spatiallm.ModelTests.test_overfits_tiny_batch) ... ok
+test_shapes_and_finite_backward (test_spatiallm.ModelTests.test_shapes_and_finite_backward) ... ok
+test_sparse_causal_topology (test_spatiallm.ModelTests.test_sparse_causal_topology) ... ok
+test_tokenizer_unicode (test_spatiallm.ModelTests.test_tokenizer_unicode) ... ok
+test_checkpoint_resume_exact_and_reject_changed_data (test_spatiallm.PipelineTests.test_checkpoint_resume_exact_and_reject_changed_data) ... ok
+test_cuda_fp16_resume_exact (test_spatiallm.PipelineTests.test_cuda_fp16_resume_exact) ... ok
+test_cuda_fp16_train_generate (test_spatiallm.PipelineTests.test_cuda_fp16_train_generate) ... ok
+test_data_split_and_shift (test_spatiallm.PipelineTests.test_data_split_and_shift) ... ok
+test_chunk_loss_and_all_gradients_equal_full_output (test_subword.SubwordModelTests.test_chunk_loss_and_all_gradients_equal_full_output) ... ok
+test_chunked_eval_matches_full_for_incomplete_chunk (test_subword.SubwordModelTests.test_chunked_eval_matches_full_for_incomplete_chunk) ... ok
+test_gpt2_roundtrip_and_cached_token_checksums (test_subword.SubwordModelTests.test_gpt2_roundtrip_and_cached_token_checksums) ... ok
+test_old_byte_generator_rejects_subword_model (test_subword.SubwordModelTests.test_old_byte_generator_rejects_subword_model) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 4.378s
+
+OK
